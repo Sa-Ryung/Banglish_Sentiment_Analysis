@@ -8,11 +8,21 @@ A comparative Machine Learning framework for sentiment classification of **Bangl
 
 Banglish text presents unique NLP challenges due to informal spelling variations, mixed English-Bengali vocabulary, non-standard grammar, and excessive emoji usage. 
 
-This project benchmark and evaluates four classical Machine Learning approaches:
+This project benchmarks and evaluates four classical Machine Learning approaches:
 1. **Bag of Words (BoW) + Multinomial Naive Bayes**
 2. **Bag of Words (BoW) + Logistic Regression (L1/L2 via `glmnet`)**
 3. **TF-IDF + Gaussian Naive Bayes**
 4. **TF-IDF + Logistic Regression (L1/L2 via `glmnet`)**
+
+---
+
+## 💾 Dataset
+
+This project uses the **[Banglish Sentiment Dataset 2026](https://www.kaggle.com/datasets/mdsajjadullah/banglish-sentiment-dataset-2026)** hosted on Kaggle.
+
+- **Source:** [Kaggle Dataset Link](https://www.kaggle.com/datasets/mdsajjadullah/banglish-sentiment-dataset-2026)
+- **Target Classes:** `negative`, `neutral`, `positive`
+- **Format:** CSV file containing raw text comments and corresponding sentiment annotations.
 
 ---
 
