@@ -1,55 +1,79 @@
-# Banglish Sentiment Analysis 🇧🇩
 
-A comparative Machine Learning framework for sentiment classification of **Banglish** (Bengali written using the Roman script) text using classical NLP techniques, supervised learning models, and evaluation metrics in R.
+<a id="readme-top"></a>
 
----
+<br />
+<div align="center">
+  <h3 align="center">Banglish Sentiment Analysis</h3>
 
-## 📌 Project Overview
+  <p align="center">
+    A comparative study of machine learning approaches for sentiment classification of Banglish (Bengali-English code-mixed) text using Bag-of-Words and TF-IDF representations.
+    <br />
+    <a href="https://github.com/Sa-Ryung/Banglish_Sentiment_Analysis"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Sa-Ryung/Banglish_Sentiment_Analysis/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Sa-Ryung/Banglish_Sentiment_Analysis/issues">Request Feature</a>
+  </p>
+</div>
 
-Banglish text presents unique NLP challenges due to informal spelling variations, mixed English-Bengali vocabulary, non-standard grammar, and excessive emoji usage. 
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#methodology">Methodology & Pipeline</a></li>
+    <li><a href="#results">Results & Key Findings</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-This project benchmarks and evaluates four classical Machine Learning approaches:
-1. **Bag of Words (BoW) + Multinomial Naive Bayes**
-2. **Bag of Words (BoW) + Logistic Regression (L1/L2 via `glmnet`)**
-3. **TF-IDF + Gaussian Naive Bayes**
-4. **TF-IDF + Logistic Regression (L1/L2 via `glmnet`)**
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
----
+Code-mixing—the blending of two or more languages within conversation or text—is a widespread phenomenon in digital communication across South Asia. In Bangladesh, informal online discussions heavily feature **"Banglish"**, where Bengali words are transliterated into the Latin alphabet and freely mixed with English terms, abbreviations, and emojis. 
 
-## 💾 Dataset
+This repository houses an R-based framework implementing a custom preprocessing pipeline and comparing classical feature engineering techniques (**Bag-of-Words** and **TF-IDF**) alongside generative and discriminative classifiers (**Naïve Bayes** and regularized **Multinomial Logistic Regression**).
 
-This project uses the **[Banglish Sentiment Dataset 2026](https://www.kaggle.com/datasets/mdsajjadullah/banglish-sentiment-dataset-2026)** hosted on Kaggle.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- **Source:** [Kaggle Dataset Link](https://www.kaggle.com/datasets/mdsajjadullah/banglish-sentiment-dataset-2026)
-- **Target Classes:** `negative`, `neutral`, `positive`
-- **Format:** CSV file containing raw text comments and corresponding sentiment annotations.
+### Built With
 
----
+* [![R][R-shield]][R-url]
+* **tm** (Text Mining Package)
+* **caret** (Classification And REgression Training)
+* **glmnet** (Regularized Generalized Linear Models)[cite: 1]
+* **e1071** (Misc Functions of the Department of Statistics, Probability Theory Group)[cite: 1]
 
-## ✨ Features
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- **Emoji Normalization:** Maps common emojis to contextual Banglish keywords (e.g., `😂` $\rightarrow$ `smile`, `😭` $\rightarrow$ `cry`).
-- **Domain-Specific Preprocessing:** Removes a customized list of Banglish stopwords while retaining sentiment-bearing terms.
-- **Sublinear TF-IDF Feature Scaling:** Uses $1 + \log(\text{TF})$ scaling with smoothed Inverse Document Frequency ($\text{IDF}$) calculated strictly from training data to avoid data leakage.
-- **Stratified Splitting:** Uses `caret::createDataPartition` to ensure balanced 3-class target distributions (`negative`, `neutral`, `positive`).
-- **Multi-Class Evaluation:** Computes Macro Precision, Macro Recall, and Macro F1-scores alongside raw Accuracy and Baseline comparisons.
-- **Comprehensive Visualizations:** Generates sentiment distribution plots, text length distributions, grouped bar charts, line graphs, and radar charts.
+<!-- GETTING STARTED -->
+## Getting Started
 
----
-##Pipeline
+To get a local copy up and running, follow these steps.
 
-<img width="784" height="1168" alt="Banglish_Sentiment_Analysis_Pipeline" src="https://github.com/user-attachments/assets/acd1254d-a78c-4597-bab1-e8e919b8e9e2" />
+### Prerequisites
 
-## 🛠️ Requirements & Installation
+You need R installed on your system along with RStudio. The script automatically checks for and installs any missing required packages (`tm`, `dplyr`, `caTools`, `stringr`, `e1071`, `caret`, `glmnet`, `vioplot`, `fmsb`, `Matrix`, `naivebayes`)[cite: 1].
 
-Ensure you have **R (>= 4.0.0)** and **RStudio** installed.
+### Installation
 
-### Required Packages
-
-The script automatically detects and installs missing packages, but you can manually install them using:
-
-```R
-install.packages(c(
-  "tm", "dplyr", "caTools", "stringr", "e1071", 
-  "caret", "glmnet", "vioplot", "fmsb", "Matrix", "naivebayes"
-))
+1. Clone the repo
+   ```bash
+   git clone [https://github.com/Sa-Ryung/Banglish_Sentiment_Analysis.git](https://github.com/Sa-Ryung/Banglish_Sentiment_Analysis.git)
