@@ -36,6 +36,8 @@ This project uses the **[Banglish Sentiment Dataset 2026](https://www.kaggle.com
 - **Comprehensive Visualizations:** Generates sentiment distribution plots, text length distributions, grouped bar charts, line graphs, and radar charts.
 
 ---
+##Pipeline
+<img width="784" height="1168" alt="Banglish_Sentiment_Analysis_Pipeline" src="https://github.com/user-attachments/assets/acd1254d-a78c-4597-bab1-e8e919b8e9e2" />
 
 ## 🛠️ Requirements & Installation
 
@@ -50,4 +52,3 @@ install.packages(c(
   "tm", "dplyr", "caTools", "stringr", "e1071", 
   "caret", "glmnet", "vioplot", "fmsb", "Matrix", "naivebayes"
 ))
-<img width="784" height="1168" alt="Banglish_Sentiment_Analysis_Pipeline" src="https://github.com/user-attachments/assets/93247376-c52e-49e9-9eae-8a1329d11360" />
